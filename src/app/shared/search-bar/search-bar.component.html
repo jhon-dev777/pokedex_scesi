@@ -1,0 +1,6 @@
+<form [formGroup]="searchPokemon"  class="example-form" (ngSubmit)="submit()">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Search pokemon</mat-label>
+      <input formControlName="pokemon" matInput placeholder="pikachu" >
+    </mat-form-field>
+</form>
