@@ -1,0 +1,6 @@
+{
+    "name": "Search pokemons",
+    "view": "search-detail",
+    "body": "seach 10 pokemon"
+  }
+  

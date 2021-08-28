@@ -1,6 +1,5 @@
 <form [formGroup]="searchPokemon"  class="example-form" (ngSubmit)="submit()">
-    <mat-form-field class="example-full-width" appearance="fill">
-      <mat-label>Search pokemon</mat-label>
-      <input formControlName="pokemon" matInput placeholder="pikachu" >
+    <mat-form-field style="width: 100%;" appearance="fill">
+      <input formControlName="pokemon" matInput placeholder="Search pokemon" >
     </mat-form-field>
 </form>

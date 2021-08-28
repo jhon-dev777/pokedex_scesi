@@ -1,0 +1,1 @@
+export const PokemonList = ['pikachu', 'raichu', 'eevee', 'charmander', 'oddish', 'sawk', 'vulpix', 'vaporeon', 'torchic', 'gengar']

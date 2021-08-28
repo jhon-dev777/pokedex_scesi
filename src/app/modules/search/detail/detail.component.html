@@ -1,1 +1,49 @@
-<p>detail works!</p>
+<mat-toolbar style="position: sticky; z-index: 1;">
+    <div style="width: 100%;">
+        <app-search-bar (getPokemon)="getPokemon($event)"></app-search-bar>
+    </div>
+</mat-toolbar>
+<div style="margin: 4em;" *ngIf="pokemon else otherView">
+    <div class="detail-contend">
+        <mat-card class="example-card">
+            <mat-card-header>
+                <mat-card-title>{{pokemon?.name}}</mat-card-title>
+                <mat-card-subtitle># {{pokemon?.id}}</mat-card-subtitle>
+            </mat-card-header>
+            <div style="display: flex;
+            justify-content: center;">
+                <img mat-card-image
+                    [src]="pokemon?.sprites?.other?.['official-artwork']?.front_default || pokemon?.sprites?.front_default"
+                    alt="Photo of a Shiba Inu">
+            </div>
+        </mat-card>
+        <mat-tab-group style="max-height: 27em;">
+            <mat-tab label="Types" id="types">
+                <mat-list role="list">
+                    <mat-list-item *ngFor="let type of pokemon?.types" role="listitem">
+                        {{type?.type?.name}}
+                    </mat-list-item>
+                </mat-list>
+            </mat-tab>
+            <mat-tab label="Base Stat" id="stats">
+                <mat-list role="list">
+                    <mat-list-item *ngFor="let stat of pokemon?.stats" role="listitem">
+                        {{stat?.stat?.name}}: {{stat?.base_stat}}
+                    </mat-list-item>
+                </mat-list>
+            </mat-tab>
+            <mat-tab label="Moves" id="moves">
+                <mat-list role="list">
+                    <mat-list-item *ngFor="let move of pokemon?.moves" role="listitem">
+                        {{move?.move?.name}}
+                    </mat-list-item>
+                </mat-list>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+</div>
+<ng-template #otherView >
+    <div style="margin-top: 4em; display: inline-flex; justify-content: center; width: 100%;">
+        <h4>All pokemons are waiting for you, you have to catch them</h4>
+    </div>
+</ng-template>
